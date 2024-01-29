@@ -1,38 +1,126 @@
+#root {
+  background-color: black;
+  height: 100vh;
+  background-image: url("./../public/sw-background.png");
+  background-size: cover;
+}
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.star-wars-btn-primary:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.star-wars-modal-overlay {
+  width: 100%;
+  height: 100%;
+  background: #000;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.star-wars-fade {
+  position: relative;
+  width: 100%;
+  min-height: 40vh;
+  top: -25px;
+  background-image: linear-gradient(0deg, transparent, black 75%);
+  z-index: 1;
+}
+
+.crawl-content {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  position: relative;
+  height: 800px;
+  color: #feda4a;
+  font-family: "Pathway Gothic One", sans-serif;
+  font-size: 500%;
+  font-weight: 600;
+  letter-spacing: 6px;
+  line-height: 150%;
+  perspective: 400px;
+  z-index: 0;
+  text-align: justify;
+  width: 80%;
+  margin: auto;
 }
 
-.App-link {
-  color: #61dafb;
+.close-modal {
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 10;
+  color: grey;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.crawl-text {
+  position: relative;
+  top: 9999px;
+  animation: crawl 40s linear;
+}
+
+.crawl-text h1 {
+  font-size: 150%;
+  text-align: center;
+}
+
+@keyframes crawl {
+  0% {
+    top: 0;
+    transform: rotateX(20deg) translateZ(0);
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    top: -6000px;
+    transform: rotateX(25deg) translateZ(-2000px);
   }
+}
+
+.header-logo {
+  width: 400px;
+  height: 150px;
+}
+
+@media (max-width: 600px) {
+  .header-logo {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .table td,
+  .table th {
+    padding: 0.3rem;
+    font-size: 0.8rem;
+  }
+}
+
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url("./../public/star_wars_loading_screen.png") center center
+    no-repeat;
+  background-size: cover;
+  z-index: 1000;
+}
+
+/* Mobile image */
+@media (max-width: 767px) {
+  .loading-screen {
+    background: url("./../public/lightsaber.jpg") center center no-repeat;
+    background-size: cover;
+  }
+}
+
+.star-wars-btn-primary {
+  margin: 0;
+  /* other styles */
 }
