@@ -13,7 +13,7 @@ export default function MovieData({ movieData }) {
   const [itemsPerPage] = useState(5);
   const [sort, setSort] = useState("");
   const [searched, setSearched] = useState(false);
-  let { characters } = movieData;
+  const { characters } = movieData;
 
   useEffect(() => {
     setLoading(true);
@@ -53,7 +53,7 @@ export default function MovieData({ movieData }) {
         );
         setData(charactersDataWithHomeworld);
       } catch (error) {
-        setError(`Failed to fetch data: ${error}`);
+        setError(`Failed to fetch data: ${error.message}`);
       } finally {
         setLoading(false);
       }

@@ -7,7 +7,6 @@ export default function MovieButton({
   movie,
   isCurrentMovie,
 }) {
-  console.log(movie);
   const [showModal, setShowModal] = useState(false);
 
   const handleOpenModal = () => {

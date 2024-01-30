@@ -19,7 +19,7 @@ export default function Search({
     e.preventDefault();
     setSearchLoading(true);
     if (search.trim() === "") {
-      console.log("You haven't entered a name to search");
+      setSearchLoading(false);
       return;
     }
 
@@ -42,7 +42,7 @@ export default function Search({
 
       onSearchData(charactersDataWithHomeworld);
     } catch (error) {
-      console.error(`Search failed: ${error}`);
+      alert(`Search failed: ${error.message}`);
     } finally {
       setSearchLoading(false);
     }
@@ -52,12 +52,13 @@ export default function Search({
     <div className="d-flex justify-content-end">
       <form
         onSubmit={submitSearch}
-        className="input-group my-2 flex justify-content-end"
+        className="input-group my-2 flex justify-content-end needs-validation"
       >
         <div className="form-outline">
           <input
             type="search"
             id="search_form"
+            required
             value={search}
             onChange={handleInputSearch}
             className="form-control"
