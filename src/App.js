@@ -52,13 +52,16 @@ function App() {
           </div>
           <div className="row mt-4">
             <div className="row">
-              {movies.map((movie) => (
+              {movies.map((oneMovie) => (
                 <MovieButton
-                  movie={movie}
-                  onHandleShowCharacters={() => handleShowCharacters(movie)}
-                  key={movie.episode_id}
+                  isCurrentMovie={
+                    movie ? movie.episode_id === oneMovie.episode_id : ""
+                  }
+                  movie={oneMovie}
+                  onHandleShowCharacters={() => handleShowCharacters(oneMovie)}
+                  key={oneMovie.episode_id}
                 >
-                  {movie.title}
+                  {oneMovie.title}
                 </MovieButton>
               ))}
             </div>

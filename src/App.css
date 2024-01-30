@@ -112,7 +112,6 @@
   z-index: 1000;
 }
 
-/* Mobile image */
 @media (max-width: 767px) {
   .loading-screen {
     background: url("./../public/lightsaber.jpg") center center no-repeat;
@@ -122,5 +121,4 @@
 
 .star-wars-btn-primary {
   margin: 0;
-  /* other styles */
 }

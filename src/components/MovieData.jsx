@@ -3,7 +3,6 @@ import Character from "./Character";
 import Pagination from "./Pagination";
 import Search from "./Search";
 
-// const homeworldCache = {};
 const characterCache = {};
 
 export default function MovieData({ movieData }) {

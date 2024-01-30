@@ -5,7 +5,9 @@ export default function MovieButton({
   children,
   onHandleShowCharacters,
   movie,
+  isCurrentMovie,
 }) {
+  console.log(movie);
   const [showModal, setShowModal] = useState(false);
 
   const handleOpenModal = () => {
@@ -20,7 +22,9 @@ export default function MovieButton({
     <div className="col-4 d-flex flex-column align-items-center">
       <button
         type="button"
-        className="btn btn-primary m-3 star-wars-btn-primary"
+        className={`btn ${
+          isCurrentMovie ? "btn-success" : "btn-primary"
+        } m-3 star-wars-btn-primary`}
         onClick={onHandleShowCharacters}
       >
         {children}
